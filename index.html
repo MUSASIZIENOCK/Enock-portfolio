@@ -3,25 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enock Musasizi | Portfolio</title>
+  <title>ENOCK MUSASIZI | Portfolio</title>
   <style>
-    /* ====== GLOBAL ====== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f4f6f8;
-      color: #222;
-      line-height: 1.6;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f4f6f8; color: #222; line-height: 1.6; }
 
-    /* ====== HEADER ====== */
     header {
       background: linear-gradient(135deg, #00b4d8, #0078ff);
       color: #fff;
@@ -31,267 +18,169 @@
       flex-direction: column;
       align-items: center;
     }
-    header img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid white;
-      margin-bottom: 1rem;
-      object-fit: cover;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase; /* Name in uppercase */
-    }
-    header p {
-      font-size: 1.2rem;
-    }
+    header img { width: 160px; height: 160px; border-radius: 50%; border: 4px solid white; margin-bottom: 1rem; object-fit: cover; }
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-transform: uppercase; }
+    header p { font-size: 1.2rem; }
 
-    /* ====== NAV ====== */
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: #333;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      display: flex; justify-content: center; gap: 2rem;
+      background: #333; padding: 1rem; position: sticky; top: 0; z-index: 10;
     }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #00b4d8;
-    }
+    nav a { color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: #00b4d8; }
 
-    /* ====== SECTIONS ====== */
-    section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 2rem 1rem;
-      border-radius: 10px;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      text-transform: capitalize; /* Section titles in title case */
-    }
+    section { max-width: 1000px; margin: 3rem auto; padding: 2rem 1rem; border-radius: 10px; }
+    h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; text-transform: capitalize; }
 
-    /* ====== ABOUT ====== */
-    #about {
-      background-color: #1abc9c;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    #about p {
-      max-width: 700px;
-      margin-bottom: 1.5rem;
-    }
+    #about { background-color: #1abc9c; color: #fff; text-align: center; }
+    #about p { max-width: 700px; margin: 0 auto 1.5rem auto; }
 
-    /* ====== SKILLS ====== */
-    #skills {
-      background-color: #3498db;
-      color: #fff;
-    }
-    #skills .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-    }
-    .skill-card {
-      background: #fff;
-      color: #222;
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .skill-card:hover {
-      transform: translateY(-5px);
-    }
+    #skills { background-color: #3498db; color: #fff; }
+    #skills .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+    .skill-card { background: #fff; color: #222; padding: 1rem; border-radius: 10px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .skill-card:hover { transform: translateY(-5px); }
 
-    /* ====== PROJECTS ====== */
-    #projects {
-      background-color: #9b59b6;
-      color: #fff;
-    }
-    #projects .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .project-card:hover {
-      transform: scale(1.03);
-    }
-    .project-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-    .project-card h3 {
-      padding: 1rem;
-      color: #222;
-    }
+    #projects { background-color: #9b59b6; color: #fff; }
+    #projects .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .project-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .project-card:hover { transform: scale(1.03); }
+    .project-card img { width: 100%; height: 150px; object-fit: cover; }
+    .project-card h3 { padding: 1rem; color: #222; }
 
-    /* ====== CONTACT ====== */
-    #contact {
-      background-color: #e74c3c;
-      color: #fff;
-      padding: 2rem 1rem;
-      border-radius: 10px;
-    }
-    #contact form {
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: left;
-    }
+    #contact { background-color: #e74c3c; color: #fff; border-radius: 10px; }
+    #contact form { max-width: 500px; margin: 0 auto; text-align: left; }
     #contact input, #contact select, #contact textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: none;
+      width: 100%; padding: 8px; margin: 5px 0 15px 0; border-radius: 5px; border: none;
     }
     #contact button {
-      background-color: #c0392b;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      background-color: #c0392b; color: #fff; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;
     }
-    #contact button:hover {
-      background-color: #922b21;
-    }
+    #contact button:hover { background-color: #922b21; }
 
-    #contact .contact-info {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
-    }
-    #contact .contact-info a {
-      color: #fff;
-      text-decoration: underline;
-    }
+    #contact .contact-info { text-align: center; margin-top: 1.5rem; font-size: 1.1rem; }
+    #contact .contact-info a { color: #fff; text-decoration: underline; }
 
-    /* ====== BACK TO TOP BUTTON ====== */
-    #backToTop {
-      display: none;
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #0078ff;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      padding: 10px 15px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-    }
-    #backToTop:hover {
-      background: #00b4d8;
-      transform: scale(1.1);
-    }
+    #backToTop { display: none; position: fixed; bottom: 30px; right: 30px; background: #0078ff; color: white; border: none; border-radius: 50%; padding: 10px 15px; font-size: 20px; cursor: pointer; box-shadow: 0 3px 8px rgba(0,0,0,0.3); transition: all 0.3s ease; }
+    #backToTop:hover { background: #00b4d8; transform: scale(1.1); }
 
-    /* ====== FOOTER ====== */
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      padding: 1rem;
-      background: #333;
-      color: white;
-    }
+    footer { text-align: center; margin-top: 2rem; padding: 1rem; background: #333; color: white; }
   </style>
 </head>
 <body>
 
-  <!-- ====== HEADER ====== -->
-  <header>
-    <img src="your-photo.jpg" alt="Enock Musasizi">
-    <h1>ENOCK MUSASIZI</h1>
-    <p>Software Developer | Graphics Designer | Website Designer & Builder</p>
-  </header>
+<header>
+  <img src="your-photo.jpg" alt="Enock Musasizi">
+  <h1>ENOCK MUSASIZI</h1>
+  <p>Software Developer | Graphics Designer | Website Designer & Builder</p>
+</header>
 
-  <!-- ====== NAV ====== -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <!-- ====== ABOUT ====== -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I’m <strong>Enock Musasizi</strong>, a passionate creator who loves designing websites, graphics, and digital solutions that solve real-world problems. I thrive on creativity, learning, and building projects that leave a mark.</p>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hello! I’m <strong>Enock Musasizi</strong>, a passionate creator who loves designing websites, graphics, and digital solutions that solve real-world problems. I thrive on creativity, learning, and building projects that leave a mark.</p>
+</section>
 
-  <!-- ====== SKILLS ====== -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">HTML</div>
-      <div class="skill-card">CSS</div>
-      <div class="skill-card">JavaScript</div>
-      <div class="skill-card">Python</div>
-      <div class="skill-card">React (Learning)</div>
-      <div class="skill-card">Graphics Design</div>
-      <div class="skill-card">Website Design & Development</div>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">HTML</div>
+    <div class="skill-card">CSS</div>
+    <div class="skill-card">JavaScript</div>
+    <div class="skill-card">Python</div>
+    <div class="skill-card">React (Learning)</div>
+    <div class="skill-card">Graphics Design</div>
+    <div class="skill-card">Website Design & Development</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x150" alt="Project 1">
+      <h3>Project One</h3>
     </div>
-  </section>
-
-  <!-- ====== PROJECTS ====== -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="https://via.placeholder.com/300x150" alt="Project 1">
-        <h3>Project One</h3>
-      </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/300x150" alt="Project 2">
-        <h3>Project Two</h3>
-      </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/300x150" alt="Project 3">
-        <h3>Project Three</h3>
-      </div>
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x150" alt="Project 2">
+      <h3>Project Two</h3>
     </div>
-  </section>
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x150" alt="Project 3">
+      <h3>Project Three</h3>
+    </div>
+  </div>
+</section>
 
-  <!-- ====== CONTACT ====== -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Fill the form below and I’ll get back to you!</p>
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>Fill the form below and I’ll get back to you!</p>
 
-    <form id="contactForm">
-      <label for="name">Your Name:</label><br>
-      <input type="text" id="name" name="name" placeholder="Enter your full name" required><br>
+  <form id="contactForm">
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required><br>
 
-      <label for="email">Your Email:</label><br>
-      <input type="email" id="email" name="email" placeholder="musasizi.enock@gmail.com" required><br>
+    <label for="email">Your Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="musasizi.enock@gmail.com" required><br>
 
-      <label for="profession">Profession:</label><br>
-      <select id="profession" name="profession" required>
-        <option value="">--Choose Profession--</option>
-        <
+    <label for="profession">Profession:</label><br>
+    <select id="profession" name="profession" required>
+      <option value="">--Choose Profession--</option>
+      <option value="student">Student</option>
+      <option value="government_worker">Government Worker</option>
+      <option value="private_sector">Private Sector</option>
+      <option value="other">Other</option>
+    </select><br>
+
+    <label for="institution">Institution:</label><br>
+    <select id="institution" name="institution">
+      <option value="">--Choose Institution--</option>
+      <option value="makerere">Makerere University</option>
+      <option value="kyambogo">Kyambogo University</option>
+      <option value="uganda_martyrs">Uganda Martyrs University</option>
+      <option value="other">Other</option>
+    </select><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" placeholder="Type your message here..." required></textarea><br>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="contact-info">
+    <p>Email: <a href="mailto:enochtommylee7@gmail.com">enochtommylee7@gmail.com</a></p>
+    <p>Phone: <a href="tel:+256742511413">+256 742 511 413</a></p>
+  </div>
+</section>
+
+<button id="backToTop">⬆</button>
+
+<footer>
+  <p>© 2025 Enock Musasizi. All rights reserved.</p>
+</footer>
+
+<script>
+  // Back to top button
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) backToTopBtn.style.display = 'block';
+    else backToTopBtn.style.display = 'none';
+  });
+  backToTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  // Form submission alert
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert(`Thank you ${contactForm.name.value}! Your message has been received.`);
+    contactForm.reset();
+  });
+</script>
+
+</body>
+</html>
