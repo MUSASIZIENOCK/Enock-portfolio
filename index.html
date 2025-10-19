@@ -1,142 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enock Musasizi | Portfolio</title>
   <style>
-    body {
+    /* ====== GLOBAL ====== */
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f8;
+      color: #222;
+      line-height: 1.6;
     }
 
-    /* Navigation Bar */
-    nav {
-      position: fixed;
-      width: 100%;
-      background-color: #333;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      text-transform: capitalize;
-    }
-
-    nav a:hover {
-      color: #ffcc00;
-    }
-
-    /* Sections */
-    section {
-      height: 100vh;
+    /* ====== HEADER ====== */
+    header {
+      background: linear-gradient(135deg, #00b4d8, #0078ff);
+      color: #fff;
+      padding: 3rem 1rem;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 20px;
+    }
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase; /* Name in uppercase */
+    }
+    header p {
+      font-size: 1.2rem;
     }
 
-    /* Header Name */
-    h1 {
-      font-size: 50px;
-      text-transform: uppercase; /* Your name in capital letters */
-      margin-bottom: 20px;
+    /* ====== NAV ====== */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #333;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #00b4d8;
     }
 
-    /* Section Titles */
+    /* ====== SECTIONS ====== */
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem 1rem;
+      border-radius: 10px;
+    }
     h2 {
-      font-size: 35px;
-      margin-bottom: 15px;
-      text-transform: capitalize; /* Graphics, Portfolio etc remain title case */
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      text-transform: capitalize; /* Section titles in title case */
     }
 
-    /* About Section */
+    /* ====== ABOUT ====== */
     #about {
       background-color: #1abc9c;
-      color: #f1c40f; /* text color */
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #about p {
+      max-width: 700px;
+      margin-bottom: 1.5rem;
     }
 
-    /* Graphics Section */
-    #graphics {
+    /* ====== SKILLS ====== */
+    #skills {
       background-color: #3498db;
-      color: #ffeb3b; /* text color */
+      color: #fff;
+    }
+    #skills .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .skill-card {
+      background: #fff;
+      color: #222;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
     }
 
-    /* Portfolio Section */
-    #portfolio {
+    /* ====== PROJECTS ====== */
+    #projects {
       background-color: #9b59b6;
-      color: #ff9800; /* text color */
+      color: #fff;
+    }
+    #projects .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: scale(1.03);
+    }
+    .project-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .project-card h3 {
+      padding: 1rem;
+      color: #222;
     }
 
-    /* Contact Section */
+    /* ====== CONTACT ====== */
     #contact {
       background-color: #e74c3c;
-      color: #ffffff; /* text color */
+      color: #fff;
+      padding: 2rem 1rem;
+      border-radius: 10px;
     }
-
-    /* Contact Details */
-    .contact-info {
-      font-size: 20px;
-      margin: 5px 0;
+    #contact form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
     }
-
-    /* Footer */
-    footer {
-      background-color: #333;
+    #contact input, #contact select, #contact textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: none;
+    }
+    #contact button {
+      background-color: #c0392b;
       color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #contact button:hover {
+      background-color: #922b21;
+    }
+
+    #contact .contact-info {
       text-align: center;
-      padding: 10px 0;
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+    }
+    #contact .contact-info a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* ====== BACK TO TOP BUTTON ====== */
+    #backToTop {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #0078ff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 10px 15px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    #backToTop:hover {
+      background: #00b4d8;
+      transform: scale(1.1);
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #333;
+      color: white;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- ====== HEADER ====== -->
+  <header>
+    <img src="your-photo.jpg" alt="Enock Musasizi">
+    <h1>ENOCK MUSASIZI</h1>
+    <p>Software Developer | Graphics Designer | Website Designer & Builder</p>
+  </header>
+
+  <!-- ====== NAV ====== -->
   <nav>
     <a href="#about">About</a>
-    <a href="#graphics">Graphics</a>
-    <a href="#portfolio">Portfolio</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- About Section -->
+  <!-- ====== ABOUT ====== -->
   <section id="about">
-    <h1>MUSASIZI ENOCK</h1>
     <h2>About Me</h2>
-    <p>Hello! I am a creative designer with a passion for graphics and web development. I enjoy building visually appealing projects that make a difference.</p>
+    <p>Hello! I’m <strong>Enock Musasizi</strong>, a passionate creator who loves designing websites, graphics, and digital solutions that solve real-world problems. I thrive on creativity, learning, and building projects that leave a mark.</p>
   </section>
 
-  <!-- Graphics Section -->
-  <section id="graphics">
-    <h2>Graphics</h2>
-    <p>Here you will find examples of my graphic designs, illustrations, and creative work.</p>
+  <!-- ====== SKILLS ====== -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">React (Learning)</div>
+      <div class="skill-card">Graphics Design</div>
+      <div class="skill-card">Website Design & Development</div>
+    </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <p>Some of my recent projects include web designs, branding, and creative solutions for businesses and individuals.</p>
+  <!-- ====== PROJECTS ====== -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150" alt="Project 1">
+        <h3>Project One</h3>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150" alt="Project 2">
+        <h3>Project Two</h3>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150" alt="Project 3">
+        <h3>Project Three</h3>
+      </div>
+    </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- ====== CONTACT ====== -->
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-info">Phone: +256 77 123 4567</div>
-    <div class="contact-info">Email: enock.musasizi@example.com</div>
-    <p>Feel free to reach out for collaborations, freelance work, or just to say hello!</p>
-  </section>
+    <h2>Contact Me</h2>
+    <p>Fill the form below and I’ll get back to you!</p>
 
-  <footer>
-    &copy; 2025 MUSASIZI ENOCK. All rights reserved.
-  </footer>
+    <form id="contactForm">
+      <label for="name">Your Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required><br>
 
-</body>
-</html>
+      <label for="email">Your Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="musasizi.enock@gmail.com" required><br>
+
+      <label for="profession">Profession:</label><br>
+      <select id="profession" name="profession" required>
+        <option value="">--Choose Profession--</option>
+        <
